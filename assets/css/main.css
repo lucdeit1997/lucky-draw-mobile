@@ -136,17 +136,23 @@ header {
 }
 
 .footer_item {
-    background-color: #c18118;
-    width: 33%;
+    background-color: #306999;
+    width: 34%;
     height: 50px;
     text-align: center;
     padding-top: 17px;
     border-top-left-radius: 8px;
     border: 1px solid rgb(114 114 133);
     border-top-right-radius: 8px;
+    position: relative;
+}
+
+.footer_icon {
+    /* position: absolute; */
 }
 
 .footer_item_active {
     /* height: 60px; */
-    background-color: #4e7fa8;
+    /* background-color: #4e7fa8; */
+    color: var(--text-color2);
 }
