@@ -91,35 +91,32 @@ html {
 
 .modal__body {
     background-color: var(--white-color);
-    margin: auto;
+    margin: auto 10px;
     position: relative;
     z-index: 2;
-    border-radius: 2px;
-}
-
-.auth-form {
-    padding: 20px;
-}
-
-.auth-form__heading {
-    font-size: 1.6rem;
-    font-weight: 400;
-    margin-top: 0px;
-}
-
-.auth-form-input-container {
-    display: flex;
-    flex-direction: column;
+    border-radius: 10px;
+    padding: 10px;
+    border: 10px solid #c17e28;
 }
 
 .btn {
     display: inline-flex;
     border: 1px solid rgba(0,0,0,0.1);
     padding: 10px 32px;
-    border-radius: 2px;
-    font-size: 1.2rem;
-    color: var(--text-color);
-    background-color: var(--white-color);
+    border-radius: 33px;
+    font-size: 1.4rem;
+    color: var(--white-color);
+    background-color: #c17e28;
+}
+
+.btn-popup {
+    display: inline-flex;
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 10px 32px;
+    border-radius: 33px;
+    font-size: 1.4rem;
+    color: var(--white-color);
+    background-color: #c17e28;
 }
 
 .btn-primary {
@@ -134,12 +131,17 @@ html {
 
 .btn-close-modal {
     position: absolute;
-    right: 0px;
-    top: 0px;
+    right: -8px;
+    top: -45px;
     font-size: 1.5rem;
     font-weight: 400;
-    color:rgb(142, 138, 138);
-    padding: 6px;
+    color: rgb(193 126 41);
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border: 3px solid;
+    border-radius: 50%;
+    text-align: center;
 }
 
 .btn-close-modal:hover {

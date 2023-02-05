@@ -4,6 +4,6 @@ $(document).ready(function() {
     })
 
     $(".btn-close-modal").on("click", function(){
-        $(".modal-login").css("visibility", "hidden")
+        $(".modal-out-of-ticket").css("visibility", "hidden")
     })
 });  

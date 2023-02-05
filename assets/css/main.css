@@ -201,3 +201,30 @@ header {
     position: absolute;
     width: 100%;
 }
+
+.modal-out-of-ticket-form__body-image img {
+    width: 80%;
+}
+
+.modal-out-of-ticket-form__heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #580820;
+}
+
+.modal-out-of-ticket-form__body-title {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #c0873e;
+}
+
+.modal-out-of-ticket-form__body-image {
+    text-align: center;
+}
+
+.modal-out-of-ticket-form__body-wrap-button {
+    display: flex;
+    justify-content: space-around;
+}
