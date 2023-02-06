@@ -533,7 +533,6 @@ label.tab.tab-warning {
 }
 #tab-1:checked + label {
     color: #8d0e38;
-    margin-left: 1px;
     background-color: #f0dabd;
 }
 #tab-3:checked + label {
