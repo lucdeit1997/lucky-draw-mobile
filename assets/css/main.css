@@ -343,9 +343,8 @@ h2.tab-title.tab-warning {
   font-size: 13px;
   line-height: 20px;
   position: relative;
-  height: 220px;
-      background: hsl(232deg 16% 15%);
-
+  min-height: 77vh;
+  background: hsl(232deg 16% 15%);
 }
 .content .item {
   opacity: 0;
@@ -404,7 +403,7 @@ h2.tab-title.tab-warning {
 #tab-4:checked ~ section #content-4 {
   opacity: 1;
   visibility: visible;
-  width: 92%;
+  width: 94%;
 }
 @media (max-width: 700px) {
   .tabs input + label,
@@ -446,7 +445,7 @@ h2.tab-title.tab-warning {
     color: #666;
     font-size: 13px;
     position: relative;
-    min-height: 78vh;
+    /* min-height: 78vh; */
     background-color: #f0d9bd;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
