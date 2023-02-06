@@ -343,7 +343,7 @@ h2.tab-title.tab-warning {
   font-size: 13px;
   line-height: 20px;
   position: relative;
-  min-height: 77vh;
+  min-height: 70vh;
   background: hsl(232deg 16% 15%);
 }
 .content .item {
