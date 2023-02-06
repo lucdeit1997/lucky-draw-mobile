@@ -432,7 +432,7 @@ h2.tab-title.tab-warning {
     background: #333;
     text-transform: uppercase;
     font-weight: 500;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     background: #26292C;
     margin-bottom: 0px;
     border-radius: 7px 7px 0 0 !important;
@@ -461,9 +461,7 @@ h2.tab-title.tab-warning {
     margin: 0 auto;
     z-index: 4 !important;
     position: relative;
-    /* background: linear-gradient(#141e30, #243b55); */
     background: #16181A;
-    border-top: 1px solid #3B3D3F;
     background: #c17e28;
 }
 
