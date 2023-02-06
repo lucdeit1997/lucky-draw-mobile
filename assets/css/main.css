@@ -173,6 +173,7 @@ header {
     bottom: 0;
     width: 100%;
     height: 60px;
+    z-index: 100;
 }
 
 .footer_item {
@@ -456,15 +457,16 @@ h2.tab-title.tab-warning {
     overflow: auto;
 }
 .container .card {
-    max-width: 600px;
-    min-height: 85vh;
+    /* max-width: 600px;
+    min-height: 85vh; */
     border-radius: 10px;
     border: none;
     margin: 0 auto;
     z-index: 4 !important;
     position: relative;
-    background: #16181A;
     background: #c17e28;
+    padding-bottom: 15px;
+
 }
 
 .content p {
