@@ -28,6 +28,9 @@ header {
     font-weight: 500;
     color: var(--white-color)
 }
+.header_item i {
+    font-size: 1.8rem;
+}
 
 .header_item_hello {
     font-size: 1.4rem;
@@ -426,7 +429,7 @@ h2.tab-title.tab-warning {
 
 .tabs input + label {
     margin: 12px 1px;
-    width: 30%;
+    width: 38%;
     color: #c17e28;
     -webkit-box-pack: center;
     padding: 5pt 10pt;
@@ -451,7 +454,7 @@ h2.tab-title.tab-warning {
     border-bottom-right-radius: 5px;
     border-top-right-radius: 35px;
     box-shadow: 0 2px 3px rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 10%);
-    padding: 1.25rem;
+    padding-left: 9px;
     z-index: 2;
     overflow: auto;
 }
@@ -549,7 +552,7 @@ label.tab.tab-warning {
   color: #ffadfa;
 }
 #tab-1:checked ~ .glider {
-  left: 4.6%;
+  left: 6.6%;
 }
 
 #tab-2:checked ~ .glider {
