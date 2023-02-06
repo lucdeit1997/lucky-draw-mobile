@@ -459,16 +459,8 @@ h2.tab-title.tab-warning {
     overflow: auto;
 }
 .container .card {
-    /* max-width: 600px;
-    min-height: 85vh; */
-    border-radius: 10px;
-    border: none;
-    margin: 0 auto;
-    z-index: 4 !important;
-    position: relative;
     background: #c17e28;
-    padding-bottom: 15px;
-
+    padding-bottom: 15px
 }
 
 .content p {
