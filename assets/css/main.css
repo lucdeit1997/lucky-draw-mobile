@@ -403,6 +403,7 @@ h2.tab-title.tab-warning {
 #tab-4:checked ~ section #content-4 {
   opacity: 1;
   visibility: visible;
+  width: 92%;
 }
 @media (max-width: 700px) {
   .tabs input + label,
@@ -444,18 +445,18 @@ h2.tab-title.tab-warning {
     color: #666;
     font-size: 13px;
     position: relative;
-    height: 439px;
+    min-height: 78vh;
     background-color: #f0d9bd;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    border-top-right-radius: 75px;
+    border-top-right-radius: 35px;
     box-shadow: 0 2px 3px rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 10%);
     padding: 1.25rem;
     z-index: 2;
 }
 .container .card {
     max-width: 600px;
-    min-height: 500px;
+    min-height: 85vh;
     border-radius: 10px;
     border: none;
     margin: 0 auto;
@@ -571,4 +572,39 @@ span.numit {
     padding: 0;
     color: aliceblue;
     text-shadow: 0.5pt 0.5pt 0.5pt #2d3748;
+}
+
+.table-header {
+    list-style: none; 
+    display: flex;
+    justify-content: space-between;  
+    width: 100%;
+}
+.table-body {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--white-color);
+    border-radius: 8px;
+    margin-top: -9px;
+}
+
+.table-header-item {
+    width: 33%;
+    background-color: #bf7c26;
+    padding: 8px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    color: #8d0e38;
+    text-align: center;
+}
+.table-body-item {
+    padding: 4px;
+    width: 33%;
+    color: var(--text-color2);
+}
+
+.table-body-item-quality {
+    color:#0b8e03
 }
