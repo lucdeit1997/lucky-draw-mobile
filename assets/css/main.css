@@ -428,7 +428,7 @@ h2.tab-title.tab-warning {
 }
 
 .tabs input + label {
-    margin: 12px 1px;
+    margin: 12px 0px;
     width: 38%;
     color: #c17e28;
     -webkit-box-pack: center;
@@ -443,7 +443,7 @@ h2.tab-title.tab-warning {
 }
 
 .content {
-    margin: 0px 16px;
+    margin: 0px 15px;
     text-align: left;
     color: #666;
     font-size: 13px;
