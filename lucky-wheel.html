@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vòng quay may mắn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script type="text/javascript" src="Winwheel.min.js"></script>
+    <!-- <script src="TweenMax.min.js"></script> -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+</head>
+<body>
+    <div class="main">
+        <header class="header">
+            <div class="grid">
+                <ul class="header_list">
+                    <li class="header_item">
+                        <i class="fa-sharp fa-solid fa-arrow-left"></i>
+                    </li>
+                    <li class="header_item">
+                        <span class="header_item_hello">Xin chào</span>
+                        <span class="header_item_fullname">PHAN VĂN ĐỆ</span>
+                    </li>
+                    <li class="header_item">
+                        <i class="fa-solid fa-gear"></i>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="grid">
+                <div class="container_main_title">
+                    VÒNG QUAY MAY MẮN
+                </div>
+                <div id="container">
+                    <div class="wrap-lucky-draw">
+                        <div class="wrap-lucky-draw-btn">
+                            <button id="spin_start" class="btn wrap-lucky-draw-btn-item wrap-lucky-draw-btn-spin" onClick="startSpin();">QUAY NGAY</button> 
+                            <button id="spin_reset" class="btn wrap-lucky-draw-btn-item wrap-lucky-draw-btn-reset" onClick="resetWheel();">THỬ LẠI</button>
+                        </div>
+                        <div class="the_wheel">
+                            <div class="wrap-specify-button">
+                                <img src="assets/img/triangle.png" alt="" class="specify-button">
+                            </div>
+                            <!-- <div class="wrap-canvas" id="wrap-canvas"> -->
+                                <canvas id="canvas" width="440" height="700" 
+                                data-responsiveMinWidth="440"
+                                data-responsiveScaleHeight="true"
+                                data-responsiveMargin="10"> 
+                                    <!-- <p style="color: white,">Sorry, your browser doesn't support canvas. Please try another.</p> -->
+                                </canvas>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="grid">
+                <ul class="footer_list">
+                    <li class="footer_item footer_item_active">
+                        <a href="index.html">
+                            <i class="footer_icon fa-solid fa-list-check"></i>
+                            Nhiệm vụ
+                        </a>
+                    </li>
+                    <li class="footer_item">
+                        <a href="lucky-wheel.html">
+                            <i class="footer_icon fa-solid fa-calendar-plus"></i>
+                           Sự kiện
+                        </a>
+                    </li>
+                    <li class="footer_item">
+                        <a href="cart-ticket.html">
+                            <i class="footer_icon fa-solid fa-cart-plus"></i>
+                           Giỏ quà
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="main.js"></script>
+<script>
+    //Thông số vòng quay
+    let duration = 20; //Thời gian kết thúc vòng quay
+    let spins    = 8; //Quay nhanh hay chậm 3, 8, 15
+    let theWheel = new Winwheel({
+        // 'numSegments'  : 8,     // Chia 8 phần bằng nhau
+        // 'outerRadius'  : 212,   // Đặt bán kính vòng quay
+        // 'textFontSize' : 12,    // Đặt kích thước chữ
+        // 'rotationAngle': 0,     // Đặt góc vòng quay từ 0 đến 360 độ.
+        // drawMode: "segmentImage", 
+        // imageOverlay: false,
+        // textFillStyle: "white",
+        'numSegments'       : 8,                 // Specify number of segments.
+        // 'outerRadius'       : 213,               // Set outer radius so wheel fits inside the background.
+        'drawText'          : true,              // Code drawn text can be used with segment images.
+        'textFontSize' : 16,    // Set font size as desired.
+        'textOrientation'   : 'curved', //horizontal, vertical, curved
+        'textAlignment'     : 'outer', //Set alignment: inner, outer, center.
+        'textMargin'        : 25,
+        'strokeStyle'  : 'white' ,
+        'responsive'   : true,
+        // 'textFontFamily'    : 'monospace',
+        // 'textStrokeStyle'   : 'black',
+        'textLineWidth'     : 3,
+        'lineWidth'   : 3,
+        'textFillStyle'     : 'white',
+        'drawMode'          : 'segmentImage',   
+        'innerRadius'   : 40,
+        'segments'     :// Các thành phần bao gồm màu sắc và văn bản.
+        [
+           { image: "tom.png", 'text' : 'IPHONE 14',},
+           { image: "tom.png", 'text' : 'CHÚC BẠN MAY\nMĂN LẦN SAU'},
+           { image: "tom.png", 'text' : 'GIẢI NHẤT'},
+           { image: "tom.png", 'text' : 'MẤT LƯỢT'},
+           { image: "tom.png", 'text' : 'GIẢI NHÌ'},
+           { image: "tom.png", 'text' : 'THÊM LƯỢT'},
+           { image: "tom.png", 'text' : 'GIẢI BA'},
+           { image: "tom.png", 'text' : 'GIẢI KHUYẾN\nKHÍCH'}
+        //    { 'fillStyle' : 'white', 'text' : 'IPHONE 14' },
+        //    { 'fillStyle' : '#773feb', 'text' : 'CHÚC BẠN MAY\nMĂN LẦN SAU'},
+        //    { 'fillStyle' : 'white', 'text' : 'LỌ NƯỚC YẾN \n THIÊN VIỆT\n15% CÓ ĐƯỜNG - 70ML'},
+        //    { 'fillStyle' : '#773feb', 'text' : 'MẤT LƯỢT'},
+        //    { 'fillStyle' : 'white', 'text' : 'NỒI CHIÊN \nKHÔNG DẦU \n150ML'},
+        //    { 'fillStyle' : '#773feb', 'text' : 'THÊM LƯỢT'},
+        //    { 'fillStyle' : 'white', 'text' : 'TÚI NƯỚC YẾN \nTRÁI CÂY TRẺ EM\n GENNEST'},
+        //    { 'fillStyle' : '#773feb', 'text' : 'GIẢI KHUYẾN\nKHÍCH'}
+        ],
+        'animation' : {
+            'type'     : 'spinToStop',
+            'duration' : duration,
+            'spins'    : spins,
+            'callbackSound'    : playSound,     //Hàm gọi âm thanh khi quay
+            'soundTrigger'     : 'pin',         //Chỉ định chân là để kích hoạt âm thanh
+            'callbackFinished' : alertPrize,    //Hàm hiển thị kết quả trúng giải thưởng
+        },
+        'pins' :
+        {
+            'number' : 32,   //Số lượng chân. Chia đều xung quanh vòng quay.
+            'outerRadius' : 5,
+            'responsive' : true,
+            'margin'      : 0,
+            // 'fillStyle'   : '#FFFF66',
+            'fillStyle'   : '#FFFF66',
+            'strokeStyle' : 'rgb(255, 165, 0)'
+        }
+    });
+    
+    //Kiểm tra vòng quay
+    let wheelSpinning = false;
+    
+    //Tạo âm thanh và tải tập tin tick.mp3.
+    let audio = new Audio('tick1.mp3');
+    function playSound() {
+        audio.pause();
+        // audio.currentTime = 0;
+        audio.play();
+        // audio.pause();
+    }
+    
+    //Hiển thị các nút vòng quay
+    function statusButton(status) {
+        if ( status==1 ) { //trước khi quay
+            document.getElementById('spin_start').removeAttribute("disabled");
+            document.getElementById('spin_start').classList.remove("hide");
+            document.getElementById('spin_reset').classList.add("hide");
+        } else if ( status==2 ) { //đang quay
+            document.getElementById('spin_start').setAttribute("disabled", false);
+            document.getElementById('spin_reset').classList.add("hide");
+        } else if ( status==3 ) { //kết quả
+            document.getElementById('spin_reset').classList.remove("hide");
+        } else {
+            alert('Các giá trị của status: 1, 2, 3');
+        }
+    }
+    statusButton(1);
+
+    //stopAngle
+    function stopAngle() {
+        //Ta có: 360 độ chia 8 bằng 45 độ cho mỗi giải thưởng.
+        //VD: Giải 3 => Có gốc độ từ 91 đến 135.
+        // let arrayStart = [46, 136, 181, 271]
+        Array.prototype.random = function () {
+            return this[Math.floor((Math.random()*this.length))];
+        }
+        let start = [46, 136, 226, 316].random();
+        let stop = Math.floor((Math.random() * 43)); //Giá trị cao nhất 44
+        let stopAt = start + stop;
+        console.log({ stopAt })
+        theWheel.animation.stopAngle = stopAt;
+    }
+    
+    //startSpin
+    function startSpin() {
+        
+        // Ensure that spinning can't be clicked again while already running.
+        if (wheelSpinning == false) {
+            //CSS hiển thị button
+            statusButton(2);
+
+            //Kết qủa chỉ định
+            stopAngle();
+
+            //Hàm bắt đầu quay
+            theWheel.startAnimation();
+           
+            //Khóa vòng quay
+            wheelSpinning = true;
+        }
+    }
+    
+    //Result
+    function alertPrize(indicatedSegment) {
+        alert("Chúc mừng bạn trúng: " + indicatedSegment.text);
+        document.getElementById('spin_start').classList.add("hide");
+        //CSS hiển thị button
+        statusButton(3);
+    }
+
+    //resetWheel
+    function resetWheel() {
+        //CSS hiển thị button   
+        statusButton(1);
+        
+        theWheel.stopAnimation(false);  // Stop the animation, false as param so does not call callback function.
+        theWheel.rotationAngle = 0;     // Re-set the wheel angle to 0 degrees.
+        theWheel.draw();                // Call draw to render changes to the wheel.
+
+        wheelSpinning = false;          // Reset to false to power buttons and spin can be clicked again.
+    }
+
+    let width = screen.width;
+    let height = screen.height;
+    if(width <= 767){
+        $("#canvas").css("width",width-20);
+        $("#wrap-canvas").css("height",width-20);
+    }
+</script>
+</html>
