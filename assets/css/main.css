@@ -212,6 +212,10 @@ header {
     width: 100%;
 }
 
+.modal-out-of-ticket {
+  visibility: hidden;
+}
+
 .modal-out-of-ticket-form__body-image img {
     width: 80%;
 }

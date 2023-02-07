@@ -87,6 +87,31 @@
             </div>
         </footer>
     </div>
+    <!-- Modal layout -->
+    <div class="modal modal-out-of-ticket">
+       <div class="modal__overlay">
+   
+       </div>
+       <div class="modal__body">
+           <i class="fa-solid fa-xmark btn-close-modal cusor-pointer"></i>
+           <div class="modal__inner">
+               <div class="modal-out-of-ticket-form">
+                   <div class="modal-out-of-ticket-form__header">
+                       <h3 class="modal-out-of-ticket-form__heading">
+                           XIN CHÚC MỪNG
+                       </h3>
+                   </div>
+   
+                   <div class="modal-out-of-ticket-form__body">
+                       <h4 class="modal-out-of-ticket-form__body-title"> </h4>
+                       <div class="modal-out-of-ticket-form__body-image">
+                           <img src="assets/img/gift.png" alt="">
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div> 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="main.js"></script>
@@ -222,7 +247,9 @@
     
     //Result
     function alertPrize(indicatedSegment) {
-        alert("Chúc mừng bạn trúng: " + indicatedSegment.text);
+        // alert("Chúc mừng bạn trúng: " + indicatedSegment.text);
+        $('.modal-out-of-ticket-form__body-title').text(`Xin chúc mừng bạn đã trúng: ${indicatedSegment.text}`);
+        $(".modal-out-of-ticket").css("visibility", "visible")
         document.getElementById('spin_start').classList.add("hide");
         //CSS hiển thị button
         statusButton(3);
